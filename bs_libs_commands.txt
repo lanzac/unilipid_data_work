@@ -1,0 +1,14 @@
+https://www.joyfulbikeshedding.com/blog/2021-01-13-alternative-to-macos-dyld-library-path.html
+
+cp /usr/local/opt/netcdf-cxx/lib/libnetcdf-cxx4.1.dylib ../lib
+cp /usr/local/opt/netcdf/lib/libnetcdf.19.dylib ../lib
+cp /usr/local/lib/libomp.dylib ../lib
+
+install_name_tool -change /usr/local/opt/netcdf-cxx/lib/libnetcdf-cxx4.1.dylib  @executable_path/../lib/libnetcdf-cxx4.1.dylib biospring
+install_name_tool -change /usr/local/opt/netcdf/lib/libnetcdf.19.dylib @executable_path/../lib/libnetcdf.19.dylib biospring 
+install_name_tool -change /usr/local/lib/libomp.dylib @executable_path/../lib/libomp.dylib biospring 
+
+install_name_tool -change /usr/local/opt/netcdf-cxx/lib/libnetcdf-cxx4.1.dylib  @executable_path/../lib/libnetcdf-cxx4.1.dylib pdb2spn
+install_name_tool -change /usr/local/opt/netcdf/lib/libnetcdf.19.dylib @executable_path/../lib/libnetcdf.19.dylib pdb2spn 
+install_name_tool -change /usr/local/lib/libomp.dylib @executable_path/../lib/libomp.dylib pdb2spn 
+
