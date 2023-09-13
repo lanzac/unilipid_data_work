@@ -214,7 +214,7 @@ if __name__ == '__main__':
         for path in lib_dependencies_paths:
             lib_name_sub = os.path.basename(path)
             if lib_name_sub in all_lib_names:
-                change_bin_dependency_path(path, os.path.join("@executable_path/", lib_name_sub), os.path.join(LIB_DIR, lib_name_main))
+                change_bin_dependency_path(path, os.path.join("@executable_path/../lib", lib_name_sub), os.path.join(LIB_DIR, lib_name_main))
     
 
 
